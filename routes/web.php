@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Common;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/demo', function () {
     return view('demo');
 });
+Route::get('/site/{name}', function () {
+    return view('demo');
+});
+Route::get('users/{name}', [Common::class, 'index'])->name('user.index');

@@ -22,4 +22,7 @@ Route::get('/demo', function () {
 Route::get('/site/{name}', function () {
     return view('demo');
 });
-Route::get('users/{name}', [Common::class, 'index'])->name('user.index');
+// Route::get('users/{name}', [Common::class, 'index'])->name('user.index');
+Route::get('users/table', [Common::class, 'table'])->name('user.table');
+Route::get('users/create', [Common::class, 'createUser']);
+

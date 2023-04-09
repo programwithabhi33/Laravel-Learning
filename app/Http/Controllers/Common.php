@@ -17,10 +17,13 @@ class Common extends Controller
         return $dataTable->render('users.index');
     }
     public function createUser(){
+        return view("users.create");
+    }
+    public function storeUser(Request $request){
         $user = new Users();
-        $user->first_name = "abhishek test";
-        $user->last_name = "biranje test";
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
         $user->save();
-        echo "User created successfully";
+        return redirect()->back();
     }
 }

@@ -24,5 +24,7 @@ Route::get('/site/{name}', function () {
 });
 // Route::get('users/{name}', [Common::class, 'index'])->name('user.index');
 Route::get('users/table', [Common::class, 'table'])->name('user.table');
-Route::get('users/create', [Common::class, 'createUser']);
+Route::get('users/create', [Common::class, 'createUser'])->name('user.create');
+Route::get('users/store', [Common::class, 'createUser']);
+Route::post('users/store', [Common::class, 'storeUser'])->name('user.store');
 
